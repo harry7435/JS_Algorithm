@@ -9,26 +9,29 @@ function solution(numbers, hand) {
         'special': [1, 0, 4, 0, 0, 3, 0, 0, 2, 0],
     }
     
-    let leftHand = '*';
-    let rightHand = '#';
+    let leftHand = '*'; // 왼손 위치
+    let rightHand = '#'; // 오른손 위치
     
     for (const n of numbers) {
+        // 1, 4, 7 왼손
         if (n === 1 || n === 4 || n === 7) {
             answer += 'L';
             leftHand = n;
-        }
+        } // 3, 6, 9 오른손
         else if (n === 3 || n === 6 || n === 9) {
             answer += 'R';
             rightHand = n;
-        }
+        } // 2, 5, 8, 0
         else {
+            // 왼손까지 거리
             let leftDistance = leftHand === '*'
                 ? numberDistance['special'][n]
                 : numberDistance[n.toString()][leftHand];
+            // 오른손까지 거리
             let rightDistance = rightHand === '#'
                 ? numberDistance['special'][n]
                 : numberDistance[n.toString()][rightHand];
-            
+            // 가까운 손 선택 or 같으면 주 손 선택
             if (leftDistance < rightDistance) {
                 answer += 'L';
                 leftHand = n;
