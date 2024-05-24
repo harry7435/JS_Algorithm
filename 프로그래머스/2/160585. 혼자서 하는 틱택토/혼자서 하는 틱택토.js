@@ -5,7 +5,6 @@ function solution(board) {
     let xLocation = [];
     
     board.forEach((line, row) => {
-        console.log(line.split(''));
         // 가로 줄이 같은 문자일 경우 승리 체크
         if (line === 'XXX') isWinX = true;
         if (line === 'OOO') isWinO = true;
@@ -20,7 +19,6 @@ function solution(board) {
         })
     })
     
-    // console.log(oLocation, xLocation);
     // O, X 갯수 체크
     const [numO, numX] = [oLocation.length, xLocation.length];
     
@@ -54,8 +52,6 @@ function solution(board) {
         checkXRow[col]++;
     })
     
-    // console.log(checkORow, checkXRow);
-    // console.log(checkODig, checkOReDig, checkXDig,checkXReDig);
     // 세로줄 또는 대각선 승리 체크
     if (checkORow.includes(3)) isWinO = true;
     if (checkXRow.includes(3)) isWinX = true;
