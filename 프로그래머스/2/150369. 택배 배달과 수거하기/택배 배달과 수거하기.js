@@ -1,12 +1,6 @@
 function solution(cap, n, deliveries, pickups) {
     let result = 0;
-    // 배달 수거 박스 리스트 생성
-    // let boxList = [];
-    // for (let i=0; i<n; i++) {
-    //     boxList.push([deliveries[i]]);
-    //     boxList[i].push(pickups[i]);
-    // }
-    
+
     // 택배 업무 없는 곳 제거 함수
     function popBoxList(boxList) {
         for (let i=boxList.length - 1; i>=0; i--) {
