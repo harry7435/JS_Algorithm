@@ -1,5 +1,6 @@
 function solution(storey) {
     let stone = 0;
+    // 한 자릿수일 수도 있으므로 제일 처음에 0 추가
     let storeyList = [0].concat(storey.toString().split('').map(str => Number(str)));
     // 일의 자리부터 탐색
     for (let i=storeyList.length - 1; i>=0; i--) {
